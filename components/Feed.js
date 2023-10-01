@@ -12,11 +12,16 @@ const Feed = () => {
     setSearchText(e.target.value);
   };
 
+  const handleTagClick = (tagValue) => {
+    setSearchText(tagValue);
+  };
+
   const filteredPrompts = prompts.filter(
     (p) =>
       p.prompt.toLowerCase().includes(searchText.toLowerCase()) ||
       p.tag.toLowerCase().includes(searchText.toLowerCase()) ||
-      p.creator.username.toLowerCase().includes(searchText.toLowerCase())
+      p.creator.username.toLowerCase().includes(searchText.toLowerCase()) ||
+      p.creator.email.toLowerCase().includes(searchText.toLowerCase())
   );
 
   useEffect(() => {
@@ -37,6 +42,7 @@ const Feed = () => {
     <section className='feed'>
       <form className='relative w-full flex-center'>
         <input
+          autoFocus
           type='text'
           placeholder='Search for a tag or a username'
           value={searchText}
@@ -54,7 +60,7 @@ const Feed = () => {
             <PromptCard
               key={prompt._id}
               prompt={prompt}
-              handleTagClick={() => {}}
+              handleTagClick={handleTagClick}
             />
           ))}
         </div>

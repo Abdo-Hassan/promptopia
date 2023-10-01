@@ -13,10 +13,6 @@ const CreatePrompt = () => {
     tag: '',
   });
 
-  if (!session || !session.user) {
-    redirect('/');
-  }
-
   // Create new prompt
   const createPrompt = async (e) => {
     e.preventDefault();

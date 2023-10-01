@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Logo from '../assets/images/logo.svg';
+import Logo from '../public/assets/images/logo.svg';
 import { signOut, getProviders, signIn, useSession } from 'next-auth/react';
 import Image from 'next/image';
 

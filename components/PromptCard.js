@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import React, { useState } from 'react';
-import Tick from '../assets/icons/tick.svg';
-import Copy from '../assets/icons/copy.svg';
+import Tick from '../public/assets/icons/tick.svg';
+import Copy from '../public/assets/icons/copy.svg';
 
 const PromptCard = ({ prompt, handleTagClick, handleEdit, handleDelete }) => {
   const [copied, setCopied] = useState('');

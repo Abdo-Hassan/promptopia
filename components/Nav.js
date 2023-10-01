@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 const Nav = () => {
   const { data: session } = useSession();
+  console.log('session:', session);
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
@@ -47,7 +48,7 @@ const Nav = () => {
 
             <Link href='/profile'>
               <Image
-                src={Logo}
+                src={session.user.image}
                 width={37}
                 height={37}
                 className='rounded-full'
@@ -77,7 +78,7 @@ const Nav = () => {
         {session?.user ? (
           <div className='flex'>
             <Image
-              src={Logo}
+              src={session.user.image}
               width={37}
               height={37}
               className='rounded-full cursor-pointer'

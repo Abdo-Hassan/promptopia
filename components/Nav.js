@@ -7,7 +7,6 @@ import Image from 'next/image';
 
 const Nav = () => {
   const { data: session } = useSession();
-  console.log('session:', session);
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
 

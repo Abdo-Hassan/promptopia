@@ -48,6 +48,7 @@ const PromptCard = ({ prompt, handleTagClick, handleEdit, handleDelete }) => {
             src={copied === prompt.prompt ? Tick : Copy}
             width={12}
             height={12}
+            alt='copy'
           />
         </div>
       </div>

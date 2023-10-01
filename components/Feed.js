@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import PromptCard from './PromptCard';
 import Loading from '@/app/loading';
+import NoData from './NoData';
 
 const Feed = () => {
   const [searchText, setSearchText] = useState('');
@@ -54,7 +55,7 @@ const Feed = () => {
 
       {loadingPrompts ? (
         <Loading />
-      ) : (
+      ) : filteredPrompts?.length > 0 ? (
         <div className='mt-16 prompt_layout'>
           {filteredPrompts?.map((prompt) => (
             <PromptCard
@@ -64,6 +65,8 @@ const Feed = () => {
             />
           ))}
         </div>
+      ) : (
+        <NoData />
       )}
     </section>
   );
